@@ -30,7 +30,7 @@ const Login = () => {
     console.log("before");
 
     try {
-      loginUser = await axios.post("http://localhost:3005/signin", {
+      loginUser = await axios.post("http://ec2-18-217-78-15.us-east-2.compute.amazonaws.com/signin", {
         email,
         password,
       });
