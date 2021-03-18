@@ -69,8 +69,8 @@ const Registration = () => {
     toast.success(`Welcome ${firstName}!`);
     history.replace("/");
   };
-  console.log(err);
   const googleFail = async (err) => {
+    console.log(err);
     toast.warn(`Something went wrong during google authentication.`);
   };
 
