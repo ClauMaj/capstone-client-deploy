@@ -27,8 +27,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let loginUser = "";
-    console.log("before");
-
     try {
       loginUser = await axios.post("https://digitalcraftscapstoneserver.josephpstocks.com/signin", {
         email,

@@ -53,14 +53,12 @@ export const fetchPendingFriendRequests = async () => {
 
 export const acceptFriendRequest = async (pendingFromFriendUserID) => {
   try {
-    console.log("on client!");
     let response = await axiosInstance.post(
       "https://digitalcraftscapstoneserver.josephpstocks.com/friends/accept",
       {
         pendingFromFriendUserID: pendingFromFriendUserID,
       }
     );
-    console.log(response);
   } catch (err) {
     console.log(err.response);
     console.error(err);
@@ -87,18 +85,15 @@ export const fetchPendingFriendRequestsANDDispatchToRedux = async () => {
 };
 
 export const fetchAllFriendRelationsIDsANDDispatch = async () => {
-  console.log("FETCH ALL IDS - 1");
+
   try {
     let allFriendsRelationsIDs = await axiosInstance.get(
       "https://digitalcraftscapstoneserver.josephpstocks.com/friends/fullstatus"
     );
     allFriendsRelationsIDs = allFriendsRelationsIDs.data;
-    console.log(allFriendsRelationsIDs);
-    console.log("FETCH ALL IDS - 2");
     store.dispatch(setAllFriendRelationsIDs(allFriendsRelationsIDs));
   } catch (error) {
-    console.error(error);
-    console.log("There was an issue fetching your friend requests!");
+
   }
 };
 
@@ -106,9 +101,6 @@ export const fetchAllFriendsANDDispatch = async () => {
   try {
     let response = await axiosInstance.get("https://digitalcraftscapstoneserver.josephpstocks.com/friends");
     response = response.data;
-    console.log("\n\n\n\n\n");
-    console.log("ALL FRIENDS FETCH");
-    console.log(response);
     store.dispatch(setAllFriendsData(response));
   } catch (err) {
     console.log(err.response);

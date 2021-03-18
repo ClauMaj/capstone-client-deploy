@@ -39,8 +39,6 @@ export default function Book(
     index,
   } = book;
 
-  console.log(tabKey);
-  console.log(props.fromSearch);
   const PLACEHOLDER_IMAGE =
     "https://tacm.com/wp-content/uploads/2018/01/no-image-available.jpeg";
 
