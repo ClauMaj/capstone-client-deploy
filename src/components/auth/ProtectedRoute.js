@@ -7,7 +7,6 @@ const ProtectedRoute = ({ component: PrRoute, ...rest }) => {
 
     return (
         < Route {...rest} render={(props) => {
-            console.log('in protected');
             if (token) {
                 return <PrRoute  {...props} />
             }

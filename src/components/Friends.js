@@ -37,7 +37,6 @@ const Friends = () => {
       let response = await fetchUserSearchResults(searchText);
       await fetchAllFriendRelationsIDsANDDispatch();
       dispatch(setPotentialFriendsSearchResults(response.data));
-      console.log(response);
     } catch (err) {
       dispatch(setPotentialFriendsSearchResults([]));
       console.error(err);
@@ -67,55 +66,55 @@ const Friends = () => {
       <Container className="mb-5">
         <S.Grid>
           {pendingReceivedFriendRequests != null &&
-          pendingReceivedFriendRequests.length !== 0
+            pendingReceivedFriendRequests.length !== 0
             ? pendingReceivedFriendRequests.map(
-                (
-                  {
-                    fromUserID,
-                    fromUserFirstName,
-                    fromUserLastName,
-                    fromUserEmail,
-                  },
-                  index
-                ) => (
-                  <Card
-                    key={index}
-                    style={{ maxWidth: 300, height: "max-content" }}
-                    className="text-center"
+              (
+                {
+                  fromUserID,
+                  fromUserFirstName,
+                  fromUserLastName,
+                  fromUserEmail,
+                },
+                index
+              ) => (
+                <Card
+                  key={index}
+                  style={{ maxWidth: 300, height: "max-content" }}
+                  className="text-center"
+                >
+                  <Card.Header
+                  // style={{
+                  //   height: "100%",
+                  //   display: "flex",
+                  //   flexDirection: "column",
+                  //   justifyContent: "space-between",
+                  // }}
                   >
-                    <Card.Header
-                    // style={{
-                    //   height: "100%",
-                    //   display: "flex",
-                    //   flexDirection: "column",
-                    //   justifyContent: "space-between",
-                    // }}
-                    >
-                      <S.H5>
-                        You have a friend request from {fromUserFirstName}{" "}
-                        {fromUserLastName}
-                      </S.H5>
-                      <S.H5>@: {fromUserEmail}</S.H5>
-                      <div>
-                        <Button
-                          onClick={async () => {
-                            await acceptFriendRequest(fromUserID);
-                            await fetchPendingFriendRequestsANDDispatchToRedux();
-                          }}
-                          className="mr-3"
-                          variant="outline-success"
-                          type="button"
-                        >
-                          Accept
+                    <S.H5>
+                      You have a friend request from {fromUserFirstName}{" "}
+                      {fromUserLastName}
+                    </S.H5>
+                    <S.H5>@: {fromUserEmail}</S.H5>
+                    <div>
+                      <Button
+                        onClick={async () => {
+                          await acceptFriendRequest(fromUserID);
+                          await fetchPendingFriendRequestsANDDispatchToRedux();
+                        }}
+                        className="mr-3"
+                        variant="outline-success"
+                        type="button"
+                      >
+                        Accept
                         </Button>
-                        <Button variant="outline-danger" type="button">
-                          Decline
+                      <Button variant="outline-danger" type="button">
+                        Decline
                         </Button>
-                      </div>
-                    </Card.Header>
-                  </Card>
-                )
+                    </div>
+                  </Card.Header>
+                </Card>
               )
+            )
             : null}
         </S.Grid>
 
@@ -143,8 +142,8 @@ const Friends = () => {
         <Container>
           {friendsResults != null && friendsResults.length !== 0
             ? friendsResults.map((friend, index) => (
-                <FriendCard key={index} friend={friend} />
-              ))
+              <FriendCard key={index} friend={friend} />
+            ))
             : null}
         </Container>
       </Container>
