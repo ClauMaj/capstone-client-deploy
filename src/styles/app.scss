@@ -1,0 +1,29 @@
+$body-bg: #edeec9;
+// $font-family-sans-serif: "Roboto", sans-serif;
+// $font-family-sans-serif: "Recursive", sans-serif;
+$font-family-sans-serif: "Noto Sans", sans-serif;
+
+$nav-tabs-border-color: white;
+$nav-tabs-border-width: 2px;
+// $nav-tabs-border-radius: $border-radius !default;
+// $nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color !default;
+// $nav-tabs-link-active-color: $gray-700 !default;
+$nav-tabs-link-active-bg: $body-bg;
+$nav-tabs-link-active-border-color: white white $nav-tabs-link-active-bg;
+
+// .siteFont {
+//   font-family: "Literata", serif;
+// }
+
+.menu {
+  position: relative;
+  left: -500;
+}
+
+@import "~bootstrap/scss/bootstrap";
+// @import url("https://fonts.googleapis.com/css2?family=Literata:wght@200&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+$font-family-sans-serif: "Noto Sans", sans-serif;
