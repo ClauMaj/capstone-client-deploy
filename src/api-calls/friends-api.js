@@ -18,7 +18,7 @@ axiosInstance.interceptors.request.use(function (config) {
 
 export const fetchUserSearchResults = async (searchQuery) => {
   try {
-    return await axiosInstance.post("http://localhost:3005/users", {
+    return await axiosInstance.post("https://digitalcraftscapstoneserver.josephpstocks.com/users", {
       searchQuery,
     });
   } catch (err) {
@@ -29,7 +29,7 @@ export const fetchUserSearchResults = async (searchQuery) => {
 
 export const sendFriendRequest = async (pendingFriendUserID) => {
   try {
-    return await axiosInstance.post("http://localhost:3005/friends/pending", {
+    return await axiosInstance.post("https://digitalcraftscapstoneserver.josephpstocks.com/friends/pending", {
       pendingFriendUserID: pendingFriendUserID,
     });
   } catch (err) {
@@ -41,7 +41,7 @@ export const sendFriendRequest = async (pendingFriendUserID) => {
 export const fetchPendingFriendRequests = async () => {
   try {
     let response = await axiosInstance.get(
-      "http://localhost:3005/friends/pending"
+      "https://digitalcraftscapstoneserver.josephpstocks.com/friends/pending"
     );
     // console.log(response);
     return response.data;
@@ -55,7 +55,7 @@ export const acceptFriendRequest = async (pendingFromFriendUserID) => {
   try {
     console.log("on client!");
     let response = await axiosInstance.post(
-      "http://localhost:3005/friends/accept",
+      "https://digitalcraftscapstoneserver.josephpstocks.com/friends/accept",
       {
         pendingFromFriendUserID: pendingFromFriendUserID,
       }
@@ -90,7 +90,7 @@ export const fetchAllFriendRelationsIDsANDDispatch = async () => {
   console.log("FETCH ALL IDS - 1");
   try {
     let allFriendsRelationsIDs = await axiosInstance.get(
-      "http://localhost:3005/friends/fullstatus"
+      "https://digitalcraftscapstoneserver.josephpstocks.com/friends/fullstatus"
     );
     allFriendsRelationsIDs = allFriendsRelationsIDs.data;
     console.log(allFriendsRelationsIDs);
@@ -104,7 +104,7 @@ export const fetchAllFriendRelationsIDsANDDispatch = async () => {
 
 export const fetchAllFriendsANDDispatch = async () => {
   try {
-    let response = await axiosInstance.get("http://localhost:3005/friends");
+    let response = await axiosInstance.get("https://digitalcraftscapstoneserver.josephpstocks.com/friends");
     response = response.data;
     console.log("\n\n\n\n\n");
     console.log("ALL FRIENDS FETCH");

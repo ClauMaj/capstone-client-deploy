@@ -18,7 +18,7 @@ axiosInstance.interceptors.request.use(function (config) {
 });
 
 export const bookAddPost = async (book) => {
-  let response = await axiosInstance.post("http://localhost:3005/books", {
+  let response = await axiosInstance.post("https://digitalcraftscapstoneserver.josephpstocks.com/books", {
     book,
   });
 
@@ -26,7 +26,7 @@ export const bookAddPost = async (book) => {
 };
 
 export const bookDeleteRequest = async (type, id) => {
-  let response = await axiosInstance.delete("http://localhost:3005/books", {
+  let response = await axiosInstance.delete("https://digitalcraftscapstoneserver.josephpstocks.com/books", {
     data: {
       idType: type,
       id: id,
@@ -45,7 +45,7 @@ export const bookDeleteRequestByGoogleBookID = async (id) => {
 
 export const addBookToPersonalLists = async (book, whichList) => {
   try {
-    let response = await axiosInstance.post("http://localhost:3005/books", {
+    let response = await axiosInstance.post("https://digitalcraftscapstoneserver.josephpstocks.com/books", {
       book,
       whichList,
     });
@@ -70,7 +70,7 @@ export const deleteBookFromPersonalLists = async (bookID, whichList) => {
     console.log("INSIDE DELETE FUNCTION ON CLIENT");
     console.log(bookID);
     console.log(whichList);
-    let response = await axiosInstance.delete("http://localhost:3005/books", {
+    let response = await axiosInstance.delete("https://digitalcraftscapstoneserver.josephpstocks.com/books", {
       data: {
         bookID,
         whichList,
@@ -107,7 +107,7 @@ export const fetchWantBooks = async () => {
 const fetchSpecifiedPersonalBookList = async (relativePath) => {
   try {
     let response = await axiosInstance.get(
-      `http://localhost:3005/${relativePath}`
+      `https://digitalcraftscapstoneserver.josephpstocks.com/${relativePath}`
     );
     return response.data;
   } catch (err) {
@@ -174,7 +174,7 @@ export const fetchAllUsersWhoOwnsBookANDDispatch = async (bookID, whichID) => {
     console.log(bookID);
     console.log(whichID);
     let whoOwnsIt = await axiosInstance.post(
-      "http://localhost:3005/whoownsit",
+      "https://digitalcraftscapstoneserver.josephpstocks.com/whoownsit",
       {
         bookID,
         whichID,

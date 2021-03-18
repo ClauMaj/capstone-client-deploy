@@ -30,7 +30,7 @@ const Login = () => {
     console.log("before");
 
     try {
-      loginUser = await axios.post("/signin", {
+      loginUser = await axios.post("https://digitalcraftscapstoneserver.josephpstocks.com/signin", {
         email,
         password,
       });
@@ -59,7 +59,7 @@ const Login = () => {
     let lastName = response.profileObj.familyName;
     let image = response.profileObj.imageUrl;
     let loginGoogleUser = await axios.post(
-      "http://localhost:3005/googlesignin",
+      "https://digitalcraftscapstoneserver.josephpstocks.com/googlesignin",
       { email, firstName, lastName }
     );
     dispatch(

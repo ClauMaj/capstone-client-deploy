@@ -29,7 +29,7 @@ const Registration = () => {
     e.preventDefault();
     let registerUser = "";
     try {
-      registerUser = await axios.post("http://localhost:3005/register", {
+      registerUser = await axios.post("https://digitalcraftscapstoneserver.josephpstocks.com/register", {
         firstName: fName,
         lastName: lName,
         email,
